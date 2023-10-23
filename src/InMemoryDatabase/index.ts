@@ -18,6 +18,7 @@ interface IDatabase<T extends IBaseRecord> {
 
   onBeforeAdd(listener: Listener<IBeforeSetEvent<T>>): () => void;
   onAfterAdd(listener: Listener<IAfterSetEvent<T>>): () => void;
+  visit(visitor: (item: T) => void): void;
 }
 
 // Factory Pattern
@@ -59,6 +60,11 @@ const createDatabase = <T extends IBaseRecord>() => {
     }
     onAfterAdd(listener: Listener<IAfterSetEvent<T>>): () => void {
       return this.afterAddListeners.subscribe(listener)
+    }
+
+    // Visitor Pattern
+    visit(visitor: (item: T) => void): void {
+      Object.values(this.db).forEach(visitor);
     }
   }
 

@@ -25,3 +25,7 @@ PokemonDB.getInstance().set({
 	attack: 100,
 	defense: 20
 });
+
+PokemonDB.getInstance().visit((item) => {
+	console.log(item);
+});
