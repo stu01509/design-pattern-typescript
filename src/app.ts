@@ -7,13 +7,11 @@ interface IPokemon {
 }
 
 const PokemonDB = createDatabase<IPokemon>();
-const pokemonDB = new PokemonDB();
-pokemonDB.set({
+
+PokemonDB.getInstance().set({
 	id: 'Bulbasaur',
 	attack: 50,
 	defense: 10
 });
 
-console.log(pokemonDB.get('Bulbasaur'));
-
-
+console.log(PokemonDB.getInstance().get('Bulbasaur'));
