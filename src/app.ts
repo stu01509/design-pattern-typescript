@@ -8,10 +8,20 @@ interface IPokemon {
 
 const PokemonDB = createDatabase<IPokemon>();
 
+const unsubscribe = PokemonDB.getInstance().onAfterAdd(({ value }) => {
+	console.log(value);
+});
+
 PokemonDB.getInstance().set({
 	id: 'Bulbasaur',
 	attack: 50,
 	defense: 10
 });
 
-console.log(PokemonDB.getInstance().get('Bulbasaur'));
+unsubscribe();
+
+PokemonDB.getInstance().set({
+	id: 'Spinosaur',
+	attack: 100,
+	defense: 20
+});
