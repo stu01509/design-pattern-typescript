@@ -15,7 +15,7 @@ const unsubscribe = PokemonDB.getInstance().onAfterAdd(({ value }) => {
 PokemonDB.getInstance().set({
 	id: 'Bulbasaur',
 	attack: 50,
-	defense: 10
+	defense: 50
 });
 
 unsubscribe();
@@ -29,3 +29,12 @@ PokemonDB.getInstance().set({
 PokemonDB.getInstance().visit((item) => {
 	console.log(item);
 });
+
+const bestAttack = PokemonDB.getInstance().selectBest(({ attack }) => attack);
+const bestDefense = PokemonDB.getInstance().selectBest(({ defense }) => defense);
+
+console.log('--- Best Attack ---');
+console.log(bestAttack);
+
+console.log('--- Best Defense ---');
+console.log(bestDefense);
