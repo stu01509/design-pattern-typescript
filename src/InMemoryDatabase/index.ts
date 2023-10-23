@@ -57,10 +57,10 @@ const createDatabase = <T extends IBaseRecord>() => {
     }
 
     onBeforeAdd(listener: Listener<IBeforeSetEvent<T>>): () => void {
-      return this.beforeAddListeners.subscribe(listener)
+      return this.beforeAddListeners.subscribe(listener);
     }
     onAfterAdd(listener: Listener<IAfterSetEvent<T>>): () => void {
-      return this.afterAddListeners.subscribe(listener)
+      return this.afterAddListeners.subscribe(listener);
     }
 
     // Visitor Pattern
