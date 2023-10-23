@@ -1,0 +1,28 @@
+{
+  "name": "design-pattern-typescript",
+  "version": "1.0.0",
+  "description": "Design Pattern in TypeScript",
+  "main": "app.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/app.js",
+    "dev": "nodemon src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stu01509/design-pattern-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stu01509/design-pattern-typescript/issues"
+  },
+  "homepage": "https://github.com/stu01509/design-pattern-typescript#readme",
+  "devDependencies": {
+    "@types/node": "^20.8.7",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
